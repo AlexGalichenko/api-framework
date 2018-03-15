@@ -1,0 +1,32 @@
+{
+  "name": "api-framework",
+  "version": "0.0.1",
+  "description": "boilerplate for jasmine and chakram api testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexGalichenko/api-framework.git"
+  },
+  "keywords": [
+    "api"
+  ],
+  "author": "Alexander Galichenko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlexGalichenko/api-framework/issues"
+  },
+  "homepage": "https://github.com/AlexGalichenko/api-framework#readme",
+  "dependencies": {
+    "chakram": "^1.5.0",
+    "gulp": "^3.9.1",
+    "gulp-jasmine": "^3.0.0",
+    "jasmine": "^3.1.0",
+    "jasmine-allure-reporter": "^1.0.2",
+    "jasmine-pretty-html-reporter": "^0.2.5",
+    "jasmine-reporters": "^2.3.0",
+    "jasmine-spec-reporter": "^4.2.1"
+  }
+}
