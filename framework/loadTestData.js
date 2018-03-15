@@ -16,8 +16,10 @@ function loadTestData(testDataFile, env = getEnv(), testDataFolder = path.resolv
 
 function getEnv() {
     const GET_ENV_REGEXP = /.*-{2}env\s+(.*).*/;
+    console.log(process.argv);
     try {
-        return process.argv.join(" ").match(GET_ENV_REGEXP)[1];
+        // return process.argv.join(" ").match(GET_ENV_REGEXP)[1];
+        return "dev"
     }
     catch(e) {
         if (e.message.includes("Cannot read property '1' of null")) {
