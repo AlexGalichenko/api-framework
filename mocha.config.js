@@ -1,8 +1,9 @@
 const config = {
-    reporter: "xunit",
+    reporter: 'mochawesome',
     reporterOptions: {
-        "output": "./reports/xunit.xml"
-    }
+        reportFilename: 'customReportFilename',
+        quiet: true,
+    },
 };
 
 module.exports = config;
