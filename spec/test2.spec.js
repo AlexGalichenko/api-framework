@@ -3,6 +3,7 @@ const expect = chakram.expect;
 const outline = require("../framework/outline");
 const loadTestData = require("../framework/loadTestData");
 const testData = loadTestData("test.json");
+const params = require('../request-params-builder/requestParamsBuilder');
 
 describe("HTTP assertions", function () {
     it("should make HTTP assertions easy", async function () {

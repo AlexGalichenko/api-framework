@@ -5,22 +5,22 @@
  */
 class RequestParamsBuilder {
 
-    addHeader(){
+    _addHeader(){
         this.headers = {};
         return this;
     }
 
-    addPostData(){
+    _addPostData(){
         this.postData = {};
         return this;
     }
 
-    addBody(){
+    _addBody(){
         this.body = {};
         return this;
     }
 
-    addAuth(){
+    _addAuth(){
         this.auth = {};
         return this;
     }
@@ -31,21 +31,37 @@ class RequestParamsBuilder {
     }
 
     setHeadersValue(key, value) {
+        if (!this.headers) {
+            this._addHeader();
+        }
+
         this.headers[key] = value;
         return this;
     }
 
     setPostDataValue(key, value) {
+        if (!this.postData) {
+            this._addPostData();
+        }
+
         this.postData[key] = value;
         return this;
     }
 
     setBodyValue(key, value) {
+        if (!this.body) {
+            this._addBody();
+        }
+
         this.body[key] = value;
         return this;
     }
 
     setAuthValue(key, value) {
+        if (!this.auth) {
+            this._addAuth();
+        }
+
         this.auth[key] = value;
         return this;
     }
