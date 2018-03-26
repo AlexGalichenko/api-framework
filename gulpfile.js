@@ -1,9 +1,16 @@
 const gulp = require("gulp");
-const jasmine = require("gulp-jasmine");
 const util = require("gulp-util");
-const config = require("./jasmine.config");
+const mocha = require("gulp-mocha");
+const config = require("./mocha.config");
+const xmlReporter = require("json-to-xml-reporter");
 
-gulp.task("test", () =>
+gulp.task("test", () => {
     gulp.src("spec/*.spec.js")
-        .pipe(jasmine(config))
-);
+        .pipe(mocha(Object.assign(config, {
+            globals: [`env=${util.env.env}`]
+        })));
+});
+
+gulp.task('creation:xmlReport', () => {
+    xmlReporter.jsonToXmlParser('./mochawesome-report/customReportFilename.json', 'xmlReport', './xml-report/');
+});

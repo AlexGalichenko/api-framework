@@ -15,9 +15,10 @@ function loadTestData(testDataFile, env = getEnv(), testDataFolder = path.resolv
 }
 
 function getEnv() {
-    const GET_ENV_REGEXP = /.*-{2}env\s+(.*).*/;
+    const GET_GLOBALS_REGEXP = /.*--globals=(.*).*/;
+    const globalVarsString = process.argv.join(" ").match(GET_GLOBALS_REGEXP)[1];
     try {
-        return process.argv.join(" ").match(GET_ENV_REGEXP)[1];
+        return globalVarsString.split(/,/).find(item => item.includes("env")).split(/=/)[1]
     }
     catch(e) {
         if (e.message.includes("Cannot read property '1' of null")) {
